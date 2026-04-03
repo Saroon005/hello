@@ -1,0 +1,110 @@
+.overlay-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(255, 220, 226, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.overlay-backdrop.night {
+  background: rgba(20, 15, 30, 0.5);
+}
+
+.overlay-content {
+  position: relative;
+  max-width: 380px;
+  width: 100%;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.overlay-content.night {
+  background: rgba(35, 28, 55, 0.85);
+  border-color: rgba(100, 80, 140, 0.4);
+}
+
+.overlay-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.night .overlay-close {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--night-text-secondary);
+}
+
+.overlay-close:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transform: scale(1.1);
+}
+
+/* ── Shared Overlay Elements ── */
+.overlay-emoji {
+  font-size: 3.5rem;
+  display: block;
+  margin-bottom: 1.25rem;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
+}
+
+.overlay-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.night-mode .overlay-title {
+  color: var(--night-text);
+}
+
+.overlay-text {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  white-space: pre-line;
+}
+
+.night-mode .overlay-text {
+  color: var(--night-text-secondary);
+}
+
+.overlay-emoji-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.25rem;
+  font-size: 1.5rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 360px) {
+  .overlay-content {
+    padding: 2rem 1.5rem;
+  }
+  .overlay-emoji {
+    font-size: 2.8rem;
+  }
+  .overlay-title {
+    font-size: 1.05rem;
+  }
+}

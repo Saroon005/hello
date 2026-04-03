@@ -1,0 +1,137 @@
+.comfort-scene {
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Loading Scene ── */
+.comfort-loading-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.comfort-rings {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comfort-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid var(--soft-pink-deep);
+}
+
+.comfort-ring.night {
+  border-color: var(--lavender-deep);
+}
+
+.comfort-ring.ring-1 {
+  width: 80px;
+  height: 80px;
+}
+
+.comfort-ring.ring-2 {
+  width: 100px;
+  height: 100px;
+}
+
+.comfort-center-emoji {
+  font-size: 2.5rem;
+  z-index: 2;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.08));
+}
+
+.comfort-loading-label {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+
+.night-mode .comfort-loading-label {
+  color: var(--night-text-secondary);
+}
+
+/* ── Items Scene ── */
+.comfort-items-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.comfort-items-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.comfort-item-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.9rem 0.5rem;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.comfort-item-card.night {
+  background: rgba(45, 35, 65, 0.35);
+  border-color: rgba(100, 80, 140, 0.25);
+}
+
+.comfort-item-emoji {
+  font-size: 1.6rem;
+  display: block;
+}
+
+.comfort-item-label {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.night-mode .comfort-item-label {
+  color: var(--night-text-secondary);
+}
+
+/* ── Done Message ── */
+.comfort-done-msg {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  text-align: center;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.night-mode .comfort-done-msg {
+  color: var(--night-text-secondary);
+}
+
+/* ── Responsive ── */
+@media (max-width: 360px) {
+  .comfort-items-grid {
+    gap: 0.5rem;
+  }
+  .comfort-item-card {
+    padding: 0.7rem 0.4rem;
+  }
+  .comfort-item-emoji {
+    font-size: 1.3rem;
+  }
+}

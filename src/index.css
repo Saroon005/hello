@@ -1,0 +1,167 @@
+/* ═══════════════════════════════════════════════════════════
+   DESIGN SYSTEM — Bobaa & Bubba Soft Mode
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Color Palette ── */
+  --soft-pink: #FFDDE2;
+  --soft-pink-deep: #FFB8C6;
+  --lavender: #E6E6FA;
+  --lavender-deep: #C5B9F2;
+  --warm-cream: #FFF5E1;
+  --text-primary: #444;
+  --text-secondary: #777;
+  --text-light: #999;
+  --white: #FFFFFF;
+  --glass-bg: rgba(255, 255, 255, 0.45);
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --shadow-soft: 0 8px 32px rgba(180, 130, 150, 0.15);
+  --shadow-glow: 0 0 40px rgba(255, 180, 198, 0.3);
+
+  /* ── Night Mode Colors ── */
+  --night-bg-start: #1a1425;
+  --night-bg-end: #2d1f3d;
+  --night-card-bg: rgba(45, 35, 65, 0.6);
+  --night-card-border: rgba(100, 80, 140, 0.3);
+  --night-text: #d4c8e8;
+  --night-text-secondary: #a090c0;
+
+  /* ── Spacing ── */
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* ── Typography ── */
+  --font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-family);
+  font-weight: var(--font-regular);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  min-height: 100vh;
+  min-height: 100dvh;
+  transition: background 0.8s ease, color 0.5s ease;
+}
+
+body.day-mode {
+  background: linear-gradient(160deg, var(--soft-pink) 0%, var(--lavender) 50%, var(--warm-cream) 100%);
+  color: var(--text-primary);
+}
+
+body.night-mode {
+  background: linear-gradient(160deg, var(--night-bg-start) 0%, var(--night-bg-end) 100%);
+  color: var(--night-text);
+}
+
+#root {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+button {
+  font-family: var(--font-family);
+  border: none;
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--soft-pink-deep);
+  border-radius: var(--radius-full);
+}
+
+/* ── Selection ── */
+::selection {
+  background: var(--soft-pink);
+  color: var(--text-primary);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   UTILITY CLASSES
+   ═══════════════════════════════════════════════════════════ */
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s ease;
+}
+
+.night-mode .glass-card {
+  background: var(--night-card-bg);
+  border-color: var(--night-card-border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.glass-card:hover {
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+
+/* ── Animations ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-12px) rotate(2deg); }
+  66% { transform: translateY(-6px) rotate(-1deg); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 180, 198, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(255, 180, 198, 0.6); }
+}
+
+@keyframes blob-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(30px, -20px) scale(1.1); }
+  50% { transform: translate(-10px, 20px) scale(0.95); }
+  75% { transform: translate(20px, 10px) scale(1.05); }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1) rotate(180deg); }
+}

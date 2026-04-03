@@ -1,0 +1,39 @@
+.tap-ripple {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--soft-pink-deep) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 90;
+  transform: translate(-50%, -50%);
+}
+
+.tap-ripple.night {
+  background: radial-gradient(circle, var(--lavender-deep) 0%, transparent 70%);
+}
+
+.floating-message {
+  position: fixed;
+  pointer-events: none;
+  z-index: 91;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 16px rgba(255, 180, 198, 0.2);
+}
+
+.floating-message.night {
+  background: rgba(45, 35, 65, 0.8);
+  color: var(--night-text);
+  border-color: rgba(100, 80, 140, 0.3);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}

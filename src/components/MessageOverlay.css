@@ -1,0 +1,134 @@
+.msg-scene {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  min-height: 280px;
+  justify-content: center;
+  overflow: visible;
+}
+
+/* ── Envelope ── */
+.msg-envelope {
+  position: relative;
+}
+
+.msg-envelope-emoji {
+  font-size: 3.2rem;
+  display: block;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
+}
+
+/* ── Typewriter ── */
+.msg-typewriter-wrap {
+  min-height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.msg-typewriter {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--text-primary);
+  text-align: center;
+  line-height: 1.6;
+  font-style: italic;
+  max-width: 280px;
+}
+
+.night-mode .msg-typewriter {
+  color: var(--night-text);
+}
+
+.msg-cursor {
+  display: inline-block;
+  color: var(--soft-pink-deep);
+  font-weight: 300;
+  font-style: normal;
+  animation: blink 0.7s steps(2) infinite;
+  margin-left: 1px;
+}
+
+.night-mode .msg-cursor {
+  color: var(--lavender-deep);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ── Heart Reveal ── */
+.msg-heart-reveal {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+}
+
+.msg-big-heart {
+  font-size: 1.6rem;
+  z-index: 2;
+  filter: drop-shadow(0 2px 8px rgba(255, 100, 150, 0.3));
+  letter-spacing: 0.1em;
+}
+
+/* ── Orbiting Hearts ── */
+.msg-orbit {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.msg-orbit-heart {
+  position: absolute;
+  font-size: 0.8rem;
+  top: 50%;
+  left: 50%;
+  animation: orbit 9s linear infinite;
+  animation-delay: var(--orbit-delay, 0s);
+}
+
+@keyframes orbit {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateX(var(--orbit-size, 55px)) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) translateX(var(--orbit-size, 55px)) rotate(-360deg);
+  }
+}
+
+/* ── Sparkles ── */
+.msg-sparkles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.msg-sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--soft-pink-deep);
+}
+
+.msg-sparkle.night {
+  background: var(--lavender-deep);
+}
+
+/* ── Responsive ── */
+@media (max-width: 360px) {
+  .msg-envelope-emoji {
+    font-size: 2.5rem;
+  }
+  .msg-typewriter {
+    font-size: 0.95rem;
+    max-width: 240px;
+  }
+}

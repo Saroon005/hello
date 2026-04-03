@@ -1,0 +1,62 @@
+.bg-animation {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* ── Blobs ── */
+.bg-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.25;
+  will-change: transform;
+}
+
+.bg-blob.pink {
+  background: radial-gradient(circle, var(--soft-pink) 0%, var(--soft-pink-deep) 100%);
+}
+
+.bg-blob.lavender {
+  background: radial-gradient(circle, var(--lavender) 0%, var(--lavender-deep) 100%);
+}
+
+.bg-blob.night.pink {
+  background: radial-gradient(circle, #4a2d55 0%, #3d2245 100%);
+  opacity: 0.3;
+}
+
+.bg-blob.night.lavender {
+  background: radial-gradient(circle, #352d55 0%, #2a2240 100%);
+  opacity: 0.3;
+}
+
+/* ── Hearts ── */
+.bg-heart {
+  position: absolute;
+  font-size: 1.5rem;
+  color: var(--soft-pink-deep);
+  opacity: 0.2;
+  user-select: none;
+  will-change: transform;
+}
+
+.bg-heart.night {
+  color: var(--lavender-deep);
+  opacity: 0.15;
+}
+
+/* ── Sparkles ── */
+.bg-sparkle {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--white);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.bg-sparkle.night {
+  background: var(--lavender);
+}

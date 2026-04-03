@@ -1,0 +1,133 @@
+.hug-scene {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  min-height: 260px;
+  justify-content: center;
+  overflow: visible;
+}
+
+/* ── Characters ── */
+.hug-characters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  font-size: 3.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.hug-char {
+  display: inline-block;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
+  will-change: transform;
+}
+
+.hug-heart-center {
+  position: absolute;
+  font-size: 1.8rem;
+  z-index: 3;
+  filter: drop-shadow(0 0 12px rgba(255, 100, 150, 0.5));
+}
+
+/* ── Heart Burst ── */
+.hug-burst-heart {
+  position: absolute;
+  font-size: 1.2rem;
+  z-index: 1;
+  pointer-events: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ── Glow ── */
+.hug-glow {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 180, 198, 0.4) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hug-glow.night {
+  background: radial-gradient(circle, rgba(197, 185, 242, 0.3) 0%, transparent 70%);
+}
+
+/* ── Action Button ── */
+.hug-action-btn {
+  padding: 0.8rem 1.8rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, var(--soft-pink) 0%, var(--soft-pink-deep) 100%);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 20px rgba(255, 180, 198, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  z-index: 2;
+  transition: box-shadow 0.3s ease;
+}
+
+.hug-action-btn.night {
+  background: linear-gradient(135deg, var(--lavender-deep) 0%, #9B8EC4 100%);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 20px rgba(155, 142, 196, 0.3);
+}
+
+.hug-action-btn:hover {
+  box-shadow: 0 6px 28px rgba(255, 180, 198, 0.5);
+}
+
+/* ── Message ── */
+.hug-message {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.6;
+  font-style: italic;
+  z-index: 2;
+}
+
+.night-mode .hug-message {
+  color: var(--night-text-secondary);
+}
+
+/* ── Shimmer Particles ── */
+.hug-shimmer-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.shimmer-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--soft-pink-deep);
+}
+
+.night-mode .shimmer-particle {
+  background: var(--lavender-deep);
+}
+
+/* ── Responsive ── */
+@media (max-width: 360px) {
+  .hug-characters {
+    font-size: 2.8rem;
+    gap: 2rem;
+  }
+}

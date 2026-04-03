@@ -1,0 +1,228 @@
+.vibes-scene {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  min-height: 320px;
+  justify-content: center;
+  overflow: visible;
+}
+
+/* ── Visualizer ── */
+.vibes-visualizer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 3px;
+  height: 60px;
+  padding: 0 1rem;
+}
+
+.vibes-bar {
+  width: 6px;
+  min-height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(180deg, var(--soft-pink-deep) 0%, var(--lavender) 100%);
+  will-change: height;
+}
+
+.vibes-bar.night {
+  background: linear-gradient(180deg, var(--lavender-deep) 0%, #6B5B8D 100%);
+}
+
+/* ── Together Scene ── */
+.vibes-together {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.vibes-teddy,
+.vibes-panda {
+  font-size: 3rem;
+  display: inline-block;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
+}
+
+/* ── Notes Stream ── */
+.vibes-notes-stream {
+  position: relative;
+  width: 40px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vibes-note-float {
+  position: absolute;
+  font-size: 1rem;
+  color: var(--soft-pink-deep);
+  pointer-events: none;
+}
+
+.vibes-note-float.night {
+  color: var(--lavender-deep);
+}
+
+/* ── Warmth Glow ── */
+.vibes-glow {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 221, 226, 0.35) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.vibes-glow.night {
+  background: radial-gradient(circle, rgba(197, 185, 242, 0.2) 0%, transparent 70%);
+}
+
+/* ── Play Button ── */
+.vibes-play-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.6rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, var(--soft-pink) 0%, var(--soft-pink-deep) 100%);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 20px rgba(255, 180, 198, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  z-index: 2;
+  transition: box-shadow 0.3s ease;
+}
+
+.vibes-play-btn.night {
+  background: linear-gradient(135deg, var(--lavender-deep) 0%, #9B8EC4 100%);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 20px rgba(155, 142, 196, 0.3);
+}
+
+.vibes-play-btn:hover {
+  box-shadow: 0 6px 28px rgba(255, 180, 198, 0.5);
+}
+
+.play-icon {
+  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.vibes-play-btn.night .play-icon {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ── Now Playing ── */
+.vibes-now-playing {
+  text-align: center;
+  z-index: 2;
+}
+
+.now-playing-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.3rem;
+}
+
+.night-mode .now-playing-label {
+  color: var(--night-text-secondary);
+}
+
+.now-playing-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #e74c7c;
+  display: inline-block;
+}
+
+.night-mode .now-playing-dot {
+  background: var(--lavender-deep);
+}
+
+.now-playing-song {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.night-mode .now-playing-song {
+  color: var(--night-text);
+}
+
+/* ── YouTube Embed ── */
+.vibes-yt-container {
+  width: 100%;
+  max-width: 300px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  z-index: 2;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.night-mode .vibes-yt-container {
+  border-color: rgba(100, 80, 140, 0.3);
+}
+
+.vibes-yt-iframe {
+  width: 100%;
+  height: 60px;
+  border: none;
+  display: block;
+}
+
+/* ── Message ── */
+.vibes-msg {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  font-style: italic;
+  z-index: 2;
+}
+
+.night-mode .vibes-msg {
+  color: var(--night-text-secondary);
+}
+
+/* ── Responsive ── */
+@media (max-width: 360px) {
+  .vibes-teddy,
+  .vibes-panda {
+    font-size: 2.5rem;
+  }
+  .vibes-visualizer {
+    gap: 2px;
+  }
+  .vibes-bar {
+    width: 5px;
+  }
+  .vibes-play-btn {
+    font-size: 0.85rem;
+    padding: 0.65rem 1.3rem;
+  }
+}

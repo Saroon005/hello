@@ -1,0 +1,99 @@
+.main-screen {
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 2rem 1.25rem 6rem;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Header ── */
+.main-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+}
+
+.header-emojis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.header-teddy {
+  font-size: 2rem;
+  animation: float 5s ease-in-out infinite;
+}
+
+.header-heart {
+  font-size: 1rem;
+  color: var(--soft-pink-deep);
+  animation: pulse-soft 2.5s ease-in-out infinite;
+}
+
+.night-mode .header-heart {
+  color: var(--lavender-deep);
+}
+
+.header-panda {
+  font-size: 2rem;
+  animation: float 5s ease-in-out infinite 1.5s;
+}
+
+.main-title {
+  font-size: 1.45rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.01em;
+}
+
+.night-mode .main-title {
+  color: var(--night-text);
+}
+
+.main-subtitle {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+}
+
+.night-mode .main-subtitle {
+  color: var(--night-text-secondary);
+}
+
+/* ── Cards Grid ── */
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  max-width: 440px;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 360px) {
+  .cards-grid {
+    gap: 0.75rem;
+  }
+  .main-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-screen {
+    padding-top: 3rem;
+  }
+  .main-title {
+    font-size: 1.8rem;
+  }
+  .cards-grid {
+    max-width: 520px;
+    gap: 1.25rem;
+  }
+}
